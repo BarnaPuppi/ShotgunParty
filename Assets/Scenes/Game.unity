@@ -801,13 +801,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1355,7 +1355,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 776408973}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1995,13 +1995,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2586,6 +2586,7 @@ GameObject:
   - component: {fileID: 1177161142}
   - component: {fileID: 1177161144}
   - component: {fileID: 1177161145}
+  - component: {fileID: 1177161146}
   m_Layer: 5
   m_Name: H2
   m_TagString: Untagged
@@ -2643,6 +2644,18 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 3286163911610860551, guid: c749a7ac4f0bf764bba82c8db0e43ce1, type: 3}
   m_PreserveAspect: 0
+--- !u!210 &1177161146
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177161141}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &1185750074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +2706,7 @@ GameObject:
   - component: {fileID: 1198688798}
   - component: {fileID: 1198688800}
   - component: {fileID: 1198688799}
+  - component: {fileID: 1198688801}
   m_Layer: 5
   m_Name: PowerupIcon
   m_TagString: Untagged
@@ -2750,6 +2764,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198688797}
   m_CullTransparentMesh: 1
+--- !u!210 &1198688801
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198688797}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &1232353326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,6 +2787,7 @@ GameObject:
   - component: {fileID: 1232353327}
   - component: {fileID: 1232353329}
   - component: {fileID: 1232353330}
+  - component: {fileID: 1232353331}
   m_Layer: 5
   m_Name: H1
   m_TagString: Untagged
@@ -2818,6 +2845,18 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 3286163911610860551, guid: c749a7ac4f0bf764bba82c8db0e43ce1, type: 3}
   m_PreserveAspect: 0
+--- !u!210 &1232353331
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232353326}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &1253817604
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,6 +3735,7 @@ GameObject:
   - component: {fileID: 1721545345}
   - component: {fileID: 1721545347}
   - component: {fileID: 1721545346}
+  - component: {fileID: 1721545348}
   m_Layer: 5
   m_Name: PlayerIcon
   m_TagString: Untagged
@@ -3753,6 +3793,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721545344}
   m_CullTransparentMesh: 1
+--- !u!210 &1721545348
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721545344}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &1722956907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4098,7 @@ GameObject:
   - component: {fileID: 2020504053}
   - component: {fileID: 2020504055}
   - component: {fileID: 2020504056}
+  - component: {fileID: 2020504057}
   m_Layer: 5
   m_Name: H3
   m_TagString: Untagged
@@ -4103,6 +4156,18 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 3286163911610860551, guid: c749a7ac4f0bf764bba82c8db0e43ce1, type: 3}
   m_PreserveAspect: 0
+--- !u!210 &2020504057
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020504052}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &2020579304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,13 +4324,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4320,6 +4385,7 @@ GameObject:
   - component: {fileID: 2102651762}
   - component: {fileID: 2102651764}
   - component: {fileID: 2102651763}
+  - component: {fileID: 2102651765}
   m_Layer: 5
   m_Name: Percentage
   m_TagString: Untagged
@@ -4394,13 +4460,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4444,3 +4510,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102651761}
   m_CullTransparentMesh: 1
+--- !u!210 &2102651765
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102651761}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_SortAtRoot: 0

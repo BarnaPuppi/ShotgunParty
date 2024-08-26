@@ -83,16 +83,9 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public IEnumerator MakeInvulnerable(int seconds) {
-        // still doesnt work, please fix this 
         isInvulnerable = true;
-        for (int i = 0; i < 5; i++) {
-            bodypartRenderers[i].color = Color.white;
-        }
         yield return new WaitForSeconds(seconds);
         isInvulnerable = false;
-        for (int i = 0; i < 5; i++) {
-            bodypartRenderers[i].color = new Color(0.75f, 0.75f, 0.75f, 0.65f);
-        }
     }
     
     public void ChangeColor() {
