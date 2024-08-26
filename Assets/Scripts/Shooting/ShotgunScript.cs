@@ -76,7 +76,7 @@ public class ShotgunScript : MonoBehaviour {
         shotgun.rotation = Quaternion.Euler(new Vector3(0f, 0f, rotation));
 
         if (shotgunState == State.Fired) {
-            shotgunSpriteRenderer.color = new Color(0.75f, 0.75f, 0.75f, 0.87f);
+            shotgunSpriteRenderer.color = new Color(0.75f, 0.75f, 0.75f, 0.6f);
             shotgunState = State.OnCooldown;
             StartCoroutine(StateReset(x => shotgunState = x, shotgunCooldown * (powerupUser.activePowerup == PowerupSpawner.PowerupType.Rage ? PowerupConstants.Rage.reloadReduction : 1f)));
             playerMovement.isInKnockback = true;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.InputSystem.WebGL;
 
@@ -21,6 +22,7 @@ public class PowerupUser : MonoBehaviour {
     private float passedTime = 0f;
     private Transform spawnedObjectsParent;
     private Transform particles;
+    private GameObject powerupUI;
 
     void Start() {
         playerMovement = gameObject.GetComponent<PlayerMovement>();
@@ -29,10 +31,26 @@ public class PowerupUser : MonoBehaviour {
         powerupSpawner = GameObject.Find("PowerupSpawner").GetComponent<PowerupSpawner>();
         spawnedObjectsParent = GameObject.Find("SpawnedObjects").transform;
         particles = gameObject.transform.GetChild(4);
+        powerupUI = playerManager.player.infoPanel.transform.GetChild(2).gameObject;
     }
 
     void Update() {
         passedTime += Time.deltaTime;
+
+        if (ownedPowerup == PowerupSpawner.PowerupType.None && activePowerup == PowerupSpawner.PowerupType.None) {
+            powerupUI.SetActive(false);
+        }
+        else  {
+            playerManager.player.infoPanel.transform.GetChild(2).gameObject.SetActive(true);
+            if (ownedPowerup != PowerupSpawner.PowerupType.None) {
+                powerupUI.GetComponent<SVGImage>().sprite = powerupSpawner.groundPowerupSprites[(int)ownedPowerup - 1];
+                
+                powerupUI.GetComponent<SVGImage>().color = Color.white;
+            }
+            else {
+                powerupUI.GetComponent<SVGImage>().color = new Color(0.6f, 0.6f, 0.6f, 0.6f);
+            }
+        }
 
         for (int powerupIndex = 0; powerupIndex < powerupSpawner.currentPowerupsSpawned.Count; powerupIndex++) {
             PowerupSpawner.GroundPowerup powerup = powerupSpawner.currentPowerupsSpawned[powerupIndex];
@@ -88,7 +106,6 @@ public class PowerupUser : MonoBehaviour {
         if (ownedPowerup != PowerupSpawner.PowerupType.None) {
             activePowerup = ownedPowerup;
             
-            // Particle effects here
             SetParticleActive(true);
 
             switch (ownedPowerup) {
@@ -130,7 +147,7 @@ public class PowerupUser : MonoBehaviour {
     public void SetParticleActive(bool value) {
         GameObject particleObject = particles.GetChild((int)activePowerup - 1).gameObject;
         particleObject.SetActive(value);
-        if (value == true) {
+        if (value) {
             particleObject.GetComponent<ParticleSystem>().Play(true);
         }
     }

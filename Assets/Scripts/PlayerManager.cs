@@ -39,6 +39,7 @@ public class PlayerManager : MonoBehaviour {
             powerupUser.activePowerup = PowerupSpawner.PowerupType.None;
             player.percentage = 0f;
             player.lifeCount--;
+            // Remove heart from UI
             player.infoPanel.transform.GetChild(3).GetChild(player.lifeCount).gameObject.SetActive(false);
             if (player.lifeCount > 0) {
                 StartCoroutine(Respawn());
@@ -61,6 +62,7 @@ public class PlayerManager : MonoBehaviour {
         percentageText = player.infoPanel.transform.GetChild(1).gameObject.GetComponent<TMP_Text>();
         player.percentage = 0f;
 
+        // Set player's icon on UI
         player.infoPanel.transform.GetChild(0).GetComponent<SVGImage>().sprite = playerIcons[player.playerID];
         
         SetPlayerActive(false);
@@ -81,18 +83,15 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public IEnumerator MakeInvulnerable(int seconds) {
+        // still doesnt work, please fix this 
         isInvulnerable = true;
         for (int i = 0; i < 5; i++) {
-            Color temp = bodypartRenderers[i].color;
-            temp.a = 0.1f;
-            bodypartRenderers[i].color = temp;
+            bodypartRenderers[i].color = Color.white;
         }
         yield return new WaitForSeconds(seconds);
         isInvulnerable = false;
         for (int i = 0; i < 5; i++) {
-            Color temp = bodypartRenderers[i].color;
-            temp.a = 1f;
-            bodypartRenderers[i].color = temp;
+            bodypartRenderers[i].color = new Color(0.75f, 0.75f, 0.75f, 0.65f);
         }
     }
     
