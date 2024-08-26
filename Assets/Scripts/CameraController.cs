@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
                 playerCount++;
             }
         }
-        avgPos /= (playerCount + 1);
+        avgPos /= playerCount + 1;
         cam.transform.position = Vector3.ClampMagnitude(avgPos, maxDistance) + offset;
     }
 }
