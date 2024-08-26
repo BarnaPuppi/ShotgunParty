@@ -23,7 +23,7 @@ public class BackgroundController : MonoBehaviour
                 playerCount++;
             }
         }
-        avgPos /= (playerCount + 1);
+        avgPos /= playerCount + 1;
         bg.transform.position = Vector3.ClampMagnitude(avgPos, maxDistance) * 0.3f;
     }
 }
