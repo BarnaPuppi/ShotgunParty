@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour {
@@ -28,5 +29,15 @@ public class MenuScript : MonoBehaviour {
 
     private void SceneChanger() {
         SceneManager.LoadScene("Scenes/Game");
+    }
+
+    public void OnHoverEnter(BaseEventData baseEventData) {
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        pointerEventData.pointerEnter.GetComponent<RectTransform>().localScale = new Vector3(1.2f, 1.2f, 1f);
+    }
+
+    public void OnHoverExit(BaseEventData baseEventData) {
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        pointerEventData.pointerEnter.GetComponent<RectTransform>().localScale = Vector3.one;
     }
 }
