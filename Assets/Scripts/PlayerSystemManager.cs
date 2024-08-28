@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -47,9 +48,22 @@ public class PlayerSystemManager : MonoBehaviour {
                 StartCoroutine(playerManager.MakeInvulnerable(3));
             }
         }
+
+        int livingPlayers = 0;
+        foreach (Player player in playerList) {
+            livingPlayers += (player.lifeCount > 0) ? 2>>player.playerID : 0;
+        }
+        if (livingPlayers == 1 || livingPlayers == 2 || livingPlayers == 4 || livingPlayers == 8) {
+            EndGame((int)Mathf.Log(livingPlayers));
+        }
     }
 
     public void OnPlayerJoin(PlayerInput playerInput) {
         playerInput.gameObject.GetComponent<PlayerManager>().OnPlayerJoin(this);
+        
+    }
+
+    private void EndGame(int winnerID) {
+        
     }
 }

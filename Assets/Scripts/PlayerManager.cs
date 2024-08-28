@@ -30,6 +30,7 @@ public class PlayerManager : MonoBehaviour {
     void Start() {
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         powerupUser = gameObject.GetComponent<PowerupUser>();
+        deadPlayerObject = GameObject.Find("DeadPlayerObject");
     }
 
     void Update() {
