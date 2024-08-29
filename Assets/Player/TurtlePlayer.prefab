@@ -25136,8 +25136,8 @@ MonoBehaviour:
   - {fileID: 3286163911610860551, guid: abb48aeb366615541b745e32e7b9149b, type: 3}
   playerIcons:
   - {fileID: 3286163911610860551, guid: a2e5be92a4326d34e88aff92c92eafaa, type: 3}
-  - {fileID: 3286163911610860551, guid: 64f680eadd783414b9d17e2835d639e1, type: 3}
   - {fileID: 3286163911610860551, guid: a0353daafc4ced341b59797cc3e68220, type: 3}
+  - {fileID: 3286163911610860551, guid: 64f680eadd783414b9d17e2835d639e1, type: 3}
   - {fileID: 3286163911610860551, guid: 5b816a4c7e563414cb4a40ba93ff05f3, type: 3}
   powerupUser: {fileID: 0}
   deadPlayerObject: {fileID: 0}

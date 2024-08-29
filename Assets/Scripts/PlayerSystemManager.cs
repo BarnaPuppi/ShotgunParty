@@ -14,6 +14,7 @@ public class PlayerSystemManager : MonoBehaviour {
     public List<Player> playerList = new List<Player>();
     public List<Vector2> spawnPoints = new List<Vector2>();
     public static GameObject infoPanelParent;
+    public GameObject waitingText;
 
     [Serializable]
     public class Player {
@@ -36,13 +37,15 @@ public class PlayerSystemManager : MonoBehaviour {
     void Awake() {
         infoPanelParent = GameObject.Find("PlayerInfo");
         Time.timeScale = 0f;
+        waitingText.SetActive(true);
         expectedPlayerCount = MenuScript.expectedPlayerCount;
-        expectedPlayerCount = 1;
     }
 
     private void Update() {
         if (expectedPlayerCount == playerList.Count && Time.timeScale == 0f) {
             Time.timeScale = 1f;
+            waitingText.SetActive(false);
+            GetComponent<PlayerInputManager>().DisableJoining();
             foreach (Player player in playerList) {
                 PlayerManager playerManager = player.gameObject.GetComponent<PlayerManager>();
                 playerManager.SetPlayerActive(true);
@@ -54,14 +57,13 @@ public class PlayerSystemManager : MonoBehaviour {
         foreach (Player player in playerList) {
             livingPlayers += (player.lifeCount > 0) ? 2>>player.playerID : 0;
         }
-        if (livingPlayers == 1 || livingPlayers == 2 || livingPlayers == 4 || livingPlayers == 8) {
+        if (livingPlayers is 1 or 2 or 4 or 8) {
             //StartCoroutine(EndGame((int)Mathf.Log(livingPlayers)));
         }
     }
 
     public void OnPlayerJoin(PlayerInput playerInput) {
         playerInput.gameObject.GetComponent<PlayerManager>().OnPlayerJoin(this);
-        
     }
 
     private IEnumerator EndGame(int winnerID) {

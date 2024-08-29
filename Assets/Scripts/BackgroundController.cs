@@ -24,6 +24,8 @@ public class BackgroundController : MonoBehaviour
             }
         }
         avgPos /= playerCount + 1;
-        bg.transform.position = Vector3.ClampMagnitude(avgPos, maxDistance) * 0.3f;
+        if (Time.timeScale != 0f) {
+            bg.transform.position = Vector3.ClampMagnitude(avgPos, maxDistance) * 0.3f;    
+        }
     }
 }
