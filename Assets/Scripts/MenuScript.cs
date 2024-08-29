@@ -9,7 +9,6 @@ public class MenuScript : MonoBehaviour {
     [NonSerialized] public static int expectedPlayerCount = 0;
     public List<GameObject> buttons;
 
-
     public void ExitGame() {
         Application.Quit();
     }
@@ -33,17 +32,16 @@ public class MenuScript : MonoBehaviour {
         SceneManager.LoadScene("Scenes/Game");
     }
 
+    // Fix mouse hover stuff
     public void OnHoverEnter(BaseEventData baseEventData) {
-        PointerEventData pointerEventData = baseEventData as PointerEventData;
-        pointerEventData.pointerEnter.GetComponent<RectTransform>().localScale = new Vector3(1.2f, 1.2f, 1f);
-        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(baseEventData.selectedObject);
+        Debug.Log(baseEventData.selectedObject.name);
     }
     
     public void OnHoverExit(BaseEventData baseEventData) {
-        PointerEventData pointerEventData = baseEventData as PointerEventData;
-        pointerEventData.pointerEnter.GetComponent<RectTransform>().localScale = Vector3.one;
-        EventSystem.current.SetSelectedGameObject(buttons[0]);
+        EventSystem.current.SetSelectedGameObject(null);
     }
+    
     private void Update() {
         foreach (GameObject button in buttons) {
             if (button == EventSystem.current.currentSelectedGameObject) {
