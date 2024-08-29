@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public class PowerupSpawner : MonoBehaviour {
-    private static int maxPowerupsSpawned = 3;
-    private static float spawnTime = 12f;
-    private static float powerupVanishTime = 17.5f;
+    private static int maxPowerupsSpawned = 4;
+    private static float spawnTime = 6f;
+    private static float powerupVanishTime = 10f;
     private static float passedTime = 0f;
 
     public List<Vector2> availableSpawnPoints = new List<Vector2>();
