@@ -14,6 +14,7 @@ public class PelletScript : MonoBehaviour {
     void OnEnable() {
         StartCoroutine(Disappear());
         rb = gameObject.GetComponent<Rigidbody2D>();
+        GetComponent<ParticleSystem>().Play();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

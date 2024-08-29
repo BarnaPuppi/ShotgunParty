@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
 public class PlayerSystemManager : MonoBehaviour {
     private int expectedPlayerCount;
@@ -54,7 +55,7 @@ public class PlayerSystemManager : MonoBehaviour {
             livingPlayers += (player.lifeCount > 0) ? 2>>player.playerID : 0;
         }
         if (livingPlayers == 1 || livingPlayers == 2 || livingPlayers == 4 || livingPlayers == 8) {
-            EndGame((int)Mathf.Log(livingPlayers));
+            //StartCoroutine(EndGame((int)Mathf.Log(livingPlayers)));
         }
     }
 
@@ -63,7 +64,8 @@ public class PlayerSystemManager : MonoBehaviour {
         
     }
 
-    private void EndGame(int winnerID) {
-        
+    private IEnumerator EndGame(int winnerID) {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Scenes/Menu");
     }
 }

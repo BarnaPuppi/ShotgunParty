@@ -49,6 +49,7 @@ public class ShotgunScript : MonoBehaviour {
         powerupUser = gameObject.GetComponent<PowerupUser>();
 
         shotVector = playerMovement.isFacingRight ? Vector2.right : Vector2.left;
+        shotAngle = Mathf.PI;
     }
 
 
