@@ -31,16 +31,6 @@ public class MenuScript : MonoBehaviour {
     private void SceneChanger() {
         SceneManager.LoadScene("Scenes/Game");
     }
-
-    // Fix mouse hover stuff
-    public void OnHoverEnter(BaseEventData baseEventData) {
-        EventSystem.current.SetSelectedGameObject(baseEventData.selectedObject);
-        Debug.Log(baseEventData.selectedObject.name);
-    }
-    
-    public void OnHoverExit(BaseEventData baseEventData) {
-        EventSystem.current.SetSelectedGameObject(null);
-    }
     
     private void Update() {
         foreach (GameObject button in buttons) {

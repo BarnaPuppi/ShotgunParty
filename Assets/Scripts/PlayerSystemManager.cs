@@ -10,7 +10,6 @@ using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 
 public class PlayerSystemManager : MonoBehaviour {
-    private int expectedPlayerCount;
     public List<Player> playerList = new List<Player>();
     public List<Vector2> spawnPoints = new List<Vector2>();
     public static GameObject infoPanelParent;
@@ -38,11 +37,11 @@ public class PlayerSystemManager : MonoBehaviour {
         infoPanelParent = GameObject.Find("PlayerInfo");
         Time.timeScale = 0f;
         waitingText.SetActive(true);
-        expectedPlayerCount = MenuScript.expectedPlayerCount;
+        MenuScript.expectedPlayerCount = 2;
     }
 
     private void Update() {
-        if (expectedPlayerCount == playerList.Count && Time.timeScale == 0f) {
+        if (AllPlayersPresent() && Time.timeScale == 0f) {
             Time.timeScale = 1f;
             waitingText.SetActive(false);
             GetComponent<PlayerInputManager>().DisableJoining();
@@ -69,5 +68,9 @@ public class PlayerSystemManager : MonoBehaviour {
     private IEnumerator EndGame(int winnerID) {
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Scenes/Menu");
+    }
+
+    public bool AllPlayersPresent() {
+        return MenuScript.expectedPlayerCount == playerList.Count;
     }
 }

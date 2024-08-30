@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 235337100}
   - component: {fileID: 235337099}
   - component: {fileID: 235337101}
+  - component: {fileID: 235337102}
   m_Layer: 0
   m_Name: PlayerSystemManager
   m_TagString: Untagged
@@ -649,6 +650,18 @@ MonoBehaviour:
   playerList: []
   spawnPoints: []
   waitingText: {fileID: 1415767183}
+--- !u!114 &235337102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235337098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc223966a5c43b6bdb12f536dad5855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &385524235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -671,11 +684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 78787031a9cea8244bf12db01c154f03, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 78787031a9cea8244bf12db01c154f03, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 78787031a9cea8244bf12db01c154f03, type: 3}
       propertyPath: m_LocalPosition.x
