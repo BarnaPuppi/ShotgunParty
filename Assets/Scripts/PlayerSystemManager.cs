@@ -39,7 +39,7 @@ public class PlayerSystemManager : MonoBehaviour {
         waitingText.SetActive(true);
         MenuScript.expectedPlayerCount = 2;
         
-        // Szia
+        // Szia 2
     }
 
     private void Update() {
