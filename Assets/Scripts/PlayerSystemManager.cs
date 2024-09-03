@@ -38,6 +38,8 @@ public class PlayerSystemManager : MonoBehaviour {
         Time.timeScale = 0f;
         waitingText.SetActive(true);
         MenuScript.expectedPlayerCount = 2;
+        
+        // Szia
     }
 
     private void Update() {
