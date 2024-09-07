@@ -93,8 +93,7 @@ public class PlayerMovement : MonoBehaviour {
         rb.AddForce(Vector2.right * Mathf.Pow(Mathf.Abs(speedDifference) * accelorationRate, velocityPower) * Mathf.Sign(speedDifference));
 
         if (jumped && IsGrounded() && canJump) {
-            rb.AddForce(
-                Vector2.up * jumpPower * (powerupUser.activePowerup == PowerupSpawner.PowerupType.Haste ? PowerupConstants.Haste.jumpPowerMultiplier : 1f), ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpPower * (powerupUser.activePowerup == PowerupSpawner.PowerupType.Haste ? PowerupConstants.Haste.jumpPowerMultiplier : 1f), ForceMode2D.Impulse);
             canJump = false;
         }
 

@@ -25084,6 +25084,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f97dbe13-59cc-46af-b0cf-a6c6edaba891
     m_ActionName: Player/Powerup Discard[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75522611-30c9-42a1-935e-3d5d0a0fd12b
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
