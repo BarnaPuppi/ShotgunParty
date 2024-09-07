@@ -37,7 +37,7 @@ public class PlayerSystemManager : MonoBehaviour {
         infoPanelParent = GameObject.Find("PlayerInfo");
         Time.timeScale = 0f;
         waitingText.SetActive(true);
-        MenuScript.expectedPlayerCount = 2;
+        MenuScript.expectedPlayerCount = 1;
     }
 
     private void Update() {
